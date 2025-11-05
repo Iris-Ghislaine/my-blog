@@ -1,4 +1,5 @@
 'use client'
+import LiveClock from '@/component/LiveClock';
 import { BookOpen, Code, Zap, Globe, Clock } from 'lucide-react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
@@ -39,31 +40,11 @@ export default function Home() {
           </Link>
         </div>
       </section>
-       <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/5 border-2 border-gray-500/20 rounded-lg p-8 shadow-lg mb-8">
-      <div className="flex items-center justify-center gap-3 mb-4">
-        <Clock className="h-8 w-8 text-gray-500 animate-pulse" />
-        <h3 className="text-2xl font-bold text-gray-500">Live Clock</h3>
-      </div>
+      <section className='mb-8'>  
+            <LiveClock />
+      </section >
 
-      <div className="text-center">
-        <div className="text-5xl font-mono font-bold mb-2 text-foreground">
-          {time.toLocaleTimeString('en-US', { hour12: true })}
-        </div>
-        <div className="text-lg text-muted-foreground">
-          {time.toLocaleDateString('en-US', {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-          })}
-        </div>
-      </div>
 
-      <div className="mt-4 text-xs text-muted-foreground text-center">
-        Client-Side Rendering (CSR) - Updates every second
-      </div>
-    </div>
-      
       <section className="mb-16">
         <h2 className="text-3xl font-bold text-center mb-10">Key Features</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
