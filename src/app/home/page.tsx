@@ -1,20 +1,9 @@
-'use client'
-import LiveClock from '@/component/LiveClock';
-import { BookOpen, Code, Zap, Globe, Clock } from 'lucide-react';
-import Link from 'next/link';
-import { useState, useEffect } from 'react';
-
-
+"use client";
+import LiveClock from "@/component/LiveClock";
+import { BookOpen, Code, Zap, Globe } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
-
-  const [time, setTime] = useState(new Date());
-
-  useEffect(() => {
-    const timer = setInterval(() => setTime(new Date()), 1000);
-    // return () => clearInterval(timer);
-  }, []);
-
   return (
     <div className="container mx-auto px-4 py-12">
       <section className="text-center mb-16">
@@ -22,8 +11,8 @@ export default function Home() {
           Welcome to NextJS Blog
         </h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-          A modern blog platform showcasing Next.js App Router capabilities with various rendering techniques
-          including CSR, SSR, SSG, and ISR.
+          A modern blog platform showcasing Next.js App Router capabilities with
+          various rendering techniques including CSR, SSR, SSG, and ISR.
         </p>
         <div className="flex gap-4 justify-center">
           <Link
@@ -40,10 +29,9 @@ export default function Home() {
           </Link>
         </div>
       </section>
-      <section className='mb-8'>  
-            <LiveClock />
-      </section >
-
+      <section className="mb-8">
+        <LiveClock />
+      </section>
 
       <section className="mb-16">
         <h2 className="text-3xl font-bold text-center mb-10">Key Features</h2>
@@ -52,7 +40,9 @@ export default function Home() {
             <div className="h-12 w-12 bg-gray-500/10 rounded-lg flex items-center justify-center mb-4">
               <Zap className="h-6 w-6 text-gray-500" />
             </div>
-            <h3 className="font-semibold text-lg mb-2">Client-Side Rendering</h3>
+            <h3 className="font-semibold text-lg mb-2">
+              Client-Side Rendering
+            </h3>
             <p className="text-sm text-muted-foreground">
               Dynamic content that updates in real-time on the client side.
             </p>
@@ -62,7 +52,9 @@ export default function Home() {
             <div className="h-12 w-12 bg-gray-500/10 rounded-lg flex items-center justify-center mb-4">
               <Globe className="h-6 w-6 text-gray-500" />
             </div>
-            <h3 className="font-semibold text-lg mb-2">Server-Side Rendering</h3>
+            <h3 className="font-semibold text-lg mb-2">
+              Server-Side Rendering
+            </h3>
             <p className="text-sm text-muted-foreground">
               Fresh data fetched on every request for dynamic pages.
             </p>
@@ -72,7 +64,9 @@ export default function Home() {
             <div className="h-12 w-12 bg-gray-500/10 rounded-lg flex items-center justify-center mb-4">
               <Code className="h-6 w-6 text-gray-500" />
             </div>
-            <h3 className="font-semibold text-lg mb-2">Static Site Generation</h3>
+            <h3 className="font-semibold text-lg mb-2">
+              Static Site Generation
+            </h3>
             <p className="text-sm text-muted-foreground">
               Pre-rendered pages at build time for optimal performance.
             </p>
@@ -82,19 +76,21 @@ export default function Home() {
             <div className="h-12 w-12 bg-gray-500/10 rounded-lg flex items-center justify-center mb-4">
               <BookOpen className="h-6 w-6 text-gray-500" />
             </div>
-            <h3 className="font-semibold text-lg mb-2">Incremental Static Regeneration</h3>
+            <h3 className="font-semibold text-lg mb-2">
+              Incremental Static Regeneration
+            </h3>
             <p className="text-sm text-muted-foreground">
               Automatic page updates with on-demand revalidation.
             </p>
           </div>
         </div>
       </section>
-
       <section className="bg-card border rounded-lg p-8 text-center">
         <h2 className="text-3xl font-bold mb-4">Ready to Start Reading?</h2>
         <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
           Discover insightful articles on technology, lifestyle, and education.
-          Our blog features content powered by different rendering strategies for optimal performance.
+          Our blog features content powered by different rendering strategies
+          for optimal performance.
         </p>
         <Link
           href="/blog"

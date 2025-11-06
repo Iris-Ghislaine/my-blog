@@ -4,13 +4,27 @@ import { useEffect, useState } from 'react';
 import { Clock } from 'lucide-react';
 
 export default function LiveClock() {
-  const [time, setTime] = useState(new Date());
+  const [time, setTime] = useState<string>();
+  const [date, setDate] = useState<string>();
 
-  useEffect(() => {
-    const timer = setInterval(() => setTime(new Date()), 1000);
-    return () => clearInterval(timer);
-  }, []);
+  // useEffect(() => {
+  //   const timer = setInterval(() => setTime(new Date()), 1000);
+  //   return () => clearInterval(timer);
+  // }, []);
 
+  useEffect(()=> {
+  setInterval(() =>{
+    setTime(new Date().toLocaleTimeString()
+  )
+  },1000)
+  },[]
+    
+  )
+useEffect(()=>{
+  setInterval(() =>{
+    setDate(new Date().toLocaleDateString())
+  },1000)
+},[])
   return (
     <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/5 border-2 border-gray-500/20 rounded-lg p-8 shadow-lg">
       <div className="flex items-center justify-center gap-3 mb-4">
@@ -20,15 +34,10 @@ export default function LiveClock() {
 
       <div className="text-center">
         <div className="text-5xl font-mono font-bold mb-2 text-foreground">
-          {time.toLocaleTimeString('en-US', { hour12: true })}
+          {time}
         </div>
         <div className="text-lg text-muted-foreground">
-          {time.toLocaleDateString('en-US', {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-          })}
+         {date}
         </div>
       </div>
 
