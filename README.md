@@ -2,12 +2,11 @@
 
 A modern blog platform built with Next.js 13+ App Router, demonstrating various rendering techniques including Client-Side Rendering (CSR), Server-Side Rendering (SSR), Static Site Generation (SSG), and Incremental Static Regeneration (ISR).
 
-## 🚀 Live Demo
+## Deployment 
 
+live demo :
 
-
-
-## ✨ Features
+## Features
 
 - **Modern UI/UX**: Clean, professional design with dark/light mode toggle
 - **Responsive Layout**: Fully responsive design that works on all devices
