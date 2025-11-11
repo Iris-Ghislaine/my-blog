@@ -102,7 +102,7 @@ export default async function AboutPage() {
                   <p className="font-semibold">Company</p>
                   <p className="text-muted-foreground">{author.company.name}</p>
                   <p className="text-sm text-muted-foreground italic">
-                    `{author.company.catchPhrase}``
+                    `{author.company.catchPhrase}`
                   </p>
                 </div>
               </div>
@@ -152,7 +152,7 @@ export default async function AboutPage() {
         <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 text-center">
           <p className="text-sm text-muted-foreground">
             <strong>Note:</strong> This page uses Server-Side Rendering (SSR). Author information
-            is fetched fresh on every page load using <code className="bg-muted px-1 py-0.5 rounded">cache: `no-store`</code>.
+            is fetched fresh on every page load using <code className="bg-muted px-1 py-0.5 rounded">cache: 'no-store'</code>.
           </p>
         </div>
       </div>

@@ -1,36 +1,162 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Blog Platform - Assignment Submission
+
+A modern blog platform built with Next.js 13+ App Router, demonstrating various rendering techniques including Client-Side Rendering (CSR), Server-Side Rendering (SSR), Static Site Generation (SSG), and Incremental Static Regeneration (ISR).
+
+## 🚀 Live Demo
+
+
+
+
+## ✨ Features
+
+- **Modern UI/UX**: Clean, professional design with dark/light mode toggle
+- **Responsive Layout**: Fully responsive design that works on all devices
+- **Navigation**: Header with active link highlighting and sticky positioning
+- **Blog System**: Complete blog with listing, detail pages, and sidebar
+- **Search Functionality**: Client-side search in blog sidebar
+- **Theme Persistence**: Dark/light mode preference saved to localStorage
+- **SEO Friendly**: Optimized with various rendering strategies
+
+## 🛠 Technologies Used
+
+- **Next.js 13+** with App Router
+- **TypeScript** for type safety
+- **Tailwind CSS** for styling
+- **Shadcn/ui** component library
+- **Lucide React** for icons
+- **JSONPlaceholder API** for mock data
+
+## Project Structure
+
+```
+app/
+├── layout.tsx                 # Main layout with header, footer, and theme toggle
+├── page.tsx                   # Home page with CSR live clock
+├── about/
+│   └── page.tsx              # About page with SSR
+└── blog/
+    ├── layout.tsx            # Nested blog layout with sidebar
+    ├── page.tsx              # Blog listing with SSG
+    └── [id]/
+        └── page.tsx          # Blog detail page with ISR
+
+components/
+└── LiveClock.tsx             # Client-side clock component
+
+components/ui/                 # Shadcn/ui components
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ installed
+- npm or yarn package manager
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Iris-Ghislaine/my-blog
+cd my-blog 
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+## Build and Deploy
 
-To learn more about Next.js, take a look at the following resources:
+### Local Build
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To create a production build:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run build
+```
 
-## Deploy on Vercel
+To run the production build locally:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm start
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Type Checking
+
+To check TypeScript types:
+
+```bash
+npm run typecheck
+```
+
+##  Pages Overview
+
+### Home Page (`/`)
+- Welcome section with project introduction
+- Live clock component (CSR) updating every second
+- Feature cards explaining rendering techniques
+- Call-to-action section
+
+### About Page (`/about`)
+- Author information fetched via SSR
+- Contact details and company information
+- Project technology stack
+- Rendering techniques explanation
+
+### Blog Listing (`/blog`)
+- Grid of blog post cards (SSG)
+- Sidebar with categories
+- Search functionality
+- Links to individual posts
+
+### Blog Detail (`/blog/[id]`)
+- Full post content (ISR)
+- Author and metadata
+- Navigation to previous/next posts
+- Revalidates every 60 seconds
+
+## Bonus Features Implemented
+
+- ✅ Dark/light mode toggle with localStorage persistence
+- ✅ Search feature in blog sidebar (client-side)
+- ✅ Responsive design for all screen sizes
+- ✅ Active navigation link highlighting
+- ✅ Professional UI with smooth transitions
+- ✅ Comprehensive footer with links
+
+
+## How to Verify Rendering Techniques
+
+### CSR (Client-Side Rendering)
+1. Visit the home page
+2. Notice the clock updates every second
+3. Toggle dark/light mode - changes persist on refresh
+
+### SSR (Server-Side Rendering)
+1. Visit `/about`
+2. View page source (Ctrl+U)
+3. Notice the author data is in the HTML (not loaded by JavaScript)
+4. Refresh the page - data is fetched fresh each time
+
+### SSG (Static Site Generation)
+1. Run `npm run build`
+2. Check the build output - blog listing is marked as `○ (Static)`
+3. Posts are pre-rendered at build time
+
+### ISR (Incremental Static Regeneration)
+1. Blog detail pages are marked as `● (SSG)` in build output
+2. Pages use `revalidate: 60` to update every 60 seconds
+3. Pre-rendered but can be updated without full rebuild
+
+## Contributing
+
+This is an assignment project, but suggestions are welcome!
+
