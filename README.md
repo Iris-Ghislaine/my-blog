@@ -4,7 +4,7 @@ A modern blog platform built with Next.js 13+ App Router, demonstrating various 
 
 ## Deployment 
 
-live demo :
+live demo : ```https://my-blognext.netlify.app/```
 
 ## Features
 
